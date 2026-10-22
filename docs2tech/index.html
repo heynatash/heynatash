@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <meta name="description" content="Docs2Tech — прототип интерфейса для медицинских экспертов и технологических команд.">
+  <title>Docs2Tech — демонстрация интерфейса</title>
+  <style>
+    :root{color-scheme:light;--ink:#152836;--muted:#657783;--line:#dce5e8;--soft:#f4f8f9;--primary:#075b70;--accent:#17a5ae;--white:#fff;--radius:20px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    :focus-visible{outline:3px solid #0b899a;outline-offset:4px}
+    .wrap{width:min(1110px,calc(100% - 40px));margin:auto}
+    .notice{background:#14394a;color:#e8f8fc;text-align:center;padding:10px 20px;font-size:13px}
+    .notice strong{color:#fff}
+    header{border-bottom:1px solid var(--line);background:#fff}
+    header .inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-size:24px;letter-spacing:-.9px;font-weight:780}
+    .logo span{color:var(--primary)}
+    nav{display:flex;gap:28px;align-items:center;font-size:14px;color:#425765}
+    nav a:hover{text-decoration:underline;text-underline-offset:6px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--primary);border-radius:12px;padding:13px 22px;background:var(--primary);color:#fff;font-weight:650;min-height:46px;transition:transform .15s ease,background .15s ease}
+    .button:hover{background:#064a5c;transform:translateY(-1px)}
+    .button.secondary{background:#fff;color:var(--primary)}
+    .button.secondary:hover{background:#edf7f8}
+    .hero{padding:102px 0 96px;background:radial-gradient(circle at 85% 20%,#dff3f1 0,transparent 38%),linear-gradient(135deg,#f6fafb,#fff 70%);border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;align-items:center;gap:60px}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;color:var(--primary);font-size:12px;font-weight:800}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.1;letter-spacing:-2.4px;margin:18px 0 24px;max-width:780px}
+    h2{font-size:clamp(27px,3.5vw,39px);line-height:1.17;letter-spacing:-1.2px;margin:0 0 16px}
+    h3{font-size:20px;line-height:1.3;margin:0 0 12px}
+    p{margin:0 0 18px}
+    .lead{color:#536c79;font-size:19px;max-width:660px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .visual{background:var(--white);border:1px solid #d2e5e8;box-shadow:0 28px 70px #143b4916;border-radius:28px;padding:24px;max-width:440px}
+    .mini-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:750}
+    .mini-card{border:1px solid var(--line);border-radius:15px;padding:18px;margin:13px 0}
+    .mini-card strong{display:block;margin:5px 0 8px;font-size:16px}
+    .mini-card small{color:var(--muted)}
+    .dots{display:flex;gap:6px;margin-bottom:18px}
+    .dots i{width:8px;height:8px;background:#bad7d9;border-radius:50%}
+    .dots i:first-child{background:var(--accent)}
+    .connector{text-align:center;color:#49858e;font-size:22px}
+    section{padding:84px 0;scroll-margin-top:30px}
+    .sub{color:var(--muted);max-width:710px;margin-bottom:32px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:#fff}
+    .card p,.step p{color:var(--muted)}
+    .number{color:var(--primary);font-weight:750;margin-bottom:18px;font-size:13px;letter-spacing:1.1px}
+    .process{background:var(--soft);border-block:1px solid var(--line)}
+    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .step{background:#fff;padding:26px;border:1px solid var(--line);border-radius:var(--radius)}
+    .step .count{display:grid;place-items:center;width:37px;height:37px;border-radius:12px;background:#def2f2;color:var(--primary);font-weight:800;margin-bottom:21px}
+    .pill{display:inline-block;font-size:12px;font-weight:750;border-radius:999px;padding:5px 11px;background:#e1f3f1;color:#175e60}
+    .demo{background:#fff}
+    .demo-shell{border:1px solid #cbdde2;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px #143b490b}
+    .demo-top{padding:22px 26px;background:#edf6f7;border-bottom:1px solid var(--line)}
+    .demo-top p{margin:5px 0 0;color:#426674;font-size:14px}
+    .tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);padding:15px 26px;background:#fff}
+    .tab{border:1px solid transparent;color:#506676;background:#fff;border-radius:10px;padding:10px 18px;font-weight:700}
+    .tab[aria-selected=true]{background:var(--primary);color:#fff}
+    .form-area{padding:30px;max-width:760px}
+    .form-area h3{margin-bottom:10px}
+    .hint{color:var(--muted);font-size:14px}
+    label{font-size:14px;font-weight:650;display:block;margin:22px 0 8px}
+    input,select,textarea{display:block;width:100%;padding:13px 14px;background:#fff;color:var(--ink);border-radius:11px;border:1px solid #afc2cb}
+    textarea{min-height:100px;resize:vertical}
+    select{min-height:48px}
+    .small-print{font-size:13px;color:var(--muted);margin:20px 0}
+    .result{display:none;margin:22px 0 0;padding:18px;border:1px solid #aed6cb;background:#edf9f4;border-radius:13px;color:#1c574c;white-space:pre-wrap;overflow-wrap:anywhere}
+    .result.show{display:block}
+    .examples{background:var(--soft);border-block:1px solid var(--line)}
+    .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .request{border:1px solid var(--line);background:#fff;border-radius:17px;padding:24px}
+    .request .tag{font-size:12px;font-weight:700;color:#186877;margin-bottom:17px}
+    .request p{color:var(--muted);font-size:14px;margin-bottom:0}
+    .state-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .state{padding:14px 16px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;font-size:14px}
+    .state b{font-size:18px}
+    .state.ok b{color:#13725c}
+    .state.no b{color:#9b6671}
+    footer{background:#102c39;color:#dde7eb;padding:40px 0}
+    footer p{font-size:13px;color:#aec2ca;margin:8px 0 0}
+    .footer-wrap{display:flex;justify-content:space-between;gap:22px;align-items:center}
+    [hidden]{display:none!important}
+    @media(max-width:760px){header .inner{min-height:64px}nav{gap:13px;font-size:12px}nav a:first-child{display:none}.hero{padding:58px 0 65px}.hero-grid{grid-template-columns:1fr;gap:32px}h1{letter-spacing:-1.4px}.visual{max-width:none}.grid,.steps,.list,.state-list{grid-template-columns:1fr}section{padding:60px 0}.card,.form-area{padding:22px}.tabs{padding:13px;gap:4px}.tab{padding:10px;font-size:13px}.footer-wrap{display:block}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="notice"><strong>ДЕМОНСТРАЦИЯ</strong> · Не вводите реальные персональные данные. Формы ничего не отправляют и не сохраняют.</div>
+  <header>
+    <div class="wrap inner">
+      <a class="logo" href="#top" aria-label="Docs2Tech, на главную">Docs<span>2</span>Tech</a>
+      <nav aria-label="Основная навигация">
+        <a href="#how">Как работает</a>
+        <a href="#requests">Примеры запросов</a>
+        <a href="#try">Формы</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Медицинская экспертиза × технологии</div>
+          <h1>Найдите общий язык между медициной и разработкой.</h1>
+          <p class="lead">Docs2Tech помогает технологическим командам сформулировать запрос к медицинскому эксперту, а специалистам — найти проекты, в которых их опыт полезен.</p>
+          <div class="actions">
+            <a class="button" href="#try" data-open="team">Я представляю команду →</a>
+            <a class="button secondary" href="#try" data-open="expert">Я медицинский эксперт</a>
+          </div>
+          <p class="small-print">Это тест интерфейса, а не запущенная платформа подбора.</p>
+        </div>
+        <div class="visual" aria-label="Иллюстрация процесса сотрудничества">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="mini-title">Пример задачи</div>
+          <div class="mini-card">
+            <small>Технологическая команда</small>
+            <strong>Как встроить медицинскую экспертизу в проект?</strong>
+            <small>Формулирует задачу и условия сотрудничества.</small>
+          </div>
+          <div class="connector" aria-hidden="true">↕</div>
+          <div class="mini-card">
+            <small>Медицинский эксперт</small>
+            <strong>Оценивает клиническую применимость идеи</strong>
+            <small>Проявляет интерес к подходящему запросу.</small>
+          </div>
+          <span class="pill">Контакт — после взаимного интереса</span>
+        </div>
+      </div>
+    </div>
+    <section id="who">
+      <div class="wrap">
+        <div class="eyebrow">Для кого</div>
+        <h2>Две стороны одного проекта</h2>
+        <p class="sub">Реальное сотрудничество обсуждается непосредственно между участниками. Docs2Tech не распределяет гонорары медицинских экспертов.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="number">01 / Медицинским экспертам</div>
+            <h3>Участвуйте в разработке технологий</h3>
+            <p>Помогайте проверять идеи, находить клинические ограничения, проводить экспертные интервью или участвовать в длительных проектах.</p>
+            <a class="button secondary" href="#try" data-open="expert">Посмотреть анкету</a>
+          </article>
+          <article class="card">
+            <div class="number">02 / Технологическим командам</div>
+            <h3>Найдите нужную экспертизу</h3>
+            <p>Опишите идею, этап разработки и задачи. В будущем подбор будет выполняться вручную администратором и с проверяемыми рекомендациями.</p>
+            <a class="button secondary" href="#try" data-open="team">Посмотреть анкету</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="process" id="how">
+      <div class="wrap">
+        <div class="eyebrow">Предполагаемый процесс</div>
+        <h2>От запроса к сотрудничеству</h2>
+        <p class="sub">Эта последовательность пока описывает продуктовую модель. На демосайте автоматическое сопоставление, авторизация и обмен контактами не реализованы.</p>
+        <div class="steps">
+          <div class="step"><div class="count">1</div><h3>Запрос</h3><p>Команда формулирует конкретную задачу и выбирает уровень видимости.</p></div>
+          <div class="step"><div class="count">2</div><h3>Интерес</h3><p>Эксперт рассматривает доступные ему запросы и отмечает интерес.</p></div>
+          <div class="step"><div class="count">3</div><h3>Взаимное решение</h3><p>Контактные каналы раскрываются только после согласия обеих сторон.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="examples" id="requests">
+      <div class="wrap">
+        <div class="eyebrow">Только вымышленные примеры</div>
+        <h2>Как могут выглядеть запросы</h2>
+        <p class="sub">Ниже только публичные учебные карточки. Закрытые запросы и реальная база экспертов не публикуются.</p>
+        <div class="list">
+          <article class="request"><div class="tag">ПУБЛИЧНЫЙ ПРИМЕР · Кастдев</div><h3>Интерфейс для клинической команды</h3><p>Нужны интервью с медицинскими специалистами о маршруте работы с результатами обследований.</p></article>
+          <article class="request"><div class="tag">ПУБЛИЧНЫЙ ПРИМЕР · Экспертная оценка</div><h3>Прототип медицинского устройства</h3><p>Нужна оценка сценария применения и ограничений в реальной клинической практике.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="demo" id="try">
+      <div class="wrap">
+        <div class="eyebrow">Интерактивный макет</div>
+        <h2>Проверить заполнение анкеты</h2>
+        <p class="sub">Попробуйте пройти форму на вымышленных данных. Подтверждение создаётся только на экране; после обновления страницы всё исчезнет.</p>
+        <div class="demo-shell">
+          <div class="demo-top"><strong>Безопасный демонстрационный режим</strong><p>Нет сервера, базы, учётных записей, передачи данных или отправки анкет.</p></div>
+          <div class="tabs" role="tablist" aria-label="Выбор анкеты">
+            <button class="tab" id="tab-expert" role="tab" aria-selected="true" aria-controls="panel-expert" type="button" data-role="expert">Медицинский эксперт</button>
+            <button class="tab" id="tab-team" role="tab" aria-selected="false" aria-controls="panel-team" type="button" data-role="team">Технологическая команда</button>
+          </div>
+          <div class="form-area" id="panel-expert" role="tabpanel" aria-labelledby="tab-expert">
+            <h3>Анкета медицинского эксперта</h3>
+            <p class="hint">Демонстрационная форма. Не указывайте ФИО, почту, телефон или реальные данные.</p>
+            <form id="expert-form" autocomplete="off">
+              <label for="expert-field">Специальность или область компетенций *</label>
+              <select id="expert-field" required><option value="">Выберите из примеров</option><option>Анестезиология-реаниматология</option><option>Неврология</option><option>Медицинская лабораторная диагностика</option><option>Разработка медицинских изделий</option><option>Другая область</option></select>
+              <label for="expert-task">Чем хотели бы заниматься? *</label>
+              <select id="expert-task" required><option value="">Выберите</option><option>Экспертное интервью</option><option>Оценка прототипа</option><option>Выявление клинических потребностей</option><option>Долгосрочное сотрудничество</option></select>
+              <label for="expert-note">Короткое описание интересов (только вымышленные данные)</label>
+              <textarea id="expert-note" maxlength="400" placeholder="Например: оценка интерфейсов медицинских устройств"></textarea>
+              <p class="small-print">Контактные данные намеренно не запрашиваются: их хранение и защита ещё не реализованы.</p>
+              <button class="button" type="submit">Проверить форму</button>
+              <div class="result" id="expert-result" aria-live="polite" role="status"></div>
+            </form>
+          </div>
+          <div class="form-area" id="panel-team" role="tabpanel" aria-labelledby="tab-team" hidden>
+            <h3>Анкета технологической команды</h3>
+            <p class="hint">Используйте только вымышленный проект. Эта версия не принимает настоящие заявки.</p>
+            <form id="team-form" autocomplete="off">
+              <label for="team-name">Условное название проекта *</label>
+              <input id="team-name" required minlength="3" maxlength="80" placeholder="Например: Демопроект">
+              <label for="team-description">Идея проекта одним-двумя предложениями *</label>
+              <textarea id="team-description" required minlength="15" maxlength="600" placeholder="Опишите вымышленную технологию и её предполагаемое применение"></textarea>
+              <label for="team-goal">Для какой задачи нужен эксперт? *</label>
+              <select id="team-goal" required><option value="">Выберите</option><option>Кастдев-интервью</option><option>Оценка применимости технологии</option><option>Поиск проблем в разработке</option><option>Долгосрочное сотрудничество</option></select>
+              <label for="team-visibility">Видимость запроса *</label>
+              <select id="team-visibility" required><option value="registered" selected>Только зарегистрированным экспертам</option><option value="public">Публичный (без контактов)</option><option value="private">Только администратору</option></select>
+              <p class="small-print">Уровни видимости пока показываются только в форме. Настоящего разграничения доступа без серверной части нет.</p>
+              <button class="button" type="submit">Проверить форму</button>
+              <div class="result" id="team-result" aria-live="polite" role="status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="status">
+      <div class="wrap">
+        <div class="eyebrow">Фактическая готовность демоверсии</div>
+        <h2>Что работает, а что — ещё нет</h2>
+        <div class="state-list">
+          <div class="state ok"><b aria-hidden="true">✓</b><span>Адаптивная страница, навигация и учебные карточки</span></div>
+          <div class="state ok"><b aria-hidden="true">✓</b><span>Переключение анкет, проверка обязательных полей, локальный результат</span></div>
+          <div class="state no"><b aria-hidden="true">×</b><span>Сохранение и обработка настоящих заявок</span></div>
+          <div class="state no"><b aria-hidden="true">×</b><span>Аккаунты и разграничение доступа</span></div>
+          <div class="state no"><b aria-hidden="true">×</b><span>Сопоставление экспертов с командами и раскрытие контактов</span></div>
+          <div class="state no"><b aria-hidden="true">×</b><span>Уведомления, CRM и интеграция с Telegram</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-wrap"><div><strong>Docs2Tech</strong><p>Интерактивный прототип · не предназначен для сбора данных или заключения соглашений.</p></div><p>Никакие анкеты не отправляются.</p></div></footer>
+  <script>
+    (function(){
+      'use strict';
+      var roles=['expert','team'];
+      function openRole(role){
+        roles.forEach(function(r){
+          var selected=r===role;
+          var tab=document.getElementById('tab-'+r);
+          var panel=document.getElementById('panel-'+r);
+          tab.setAttribute('aria-selected',String(selected));
+          tab.tabIndex=selected?0:-1;
+          panel.hidden=!selected;
+        });
+      }
+      document.querySelectorAll('[data-role], [data-open]').forEach(function(control){
+        control.addEventListener('click',function(){openRole(control.getAttribute('data-role')||control.getAttribute('data-open'));});
+      });
+      document.querySelector('.tabs').addEventListener('keydown',function(e){
+        if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+        var selected=document.querySelector('.tab[aria-selected="true"]');
+        var next=selected.id==='tab-expert'?'team':'expert';
+        openRole(next);document.getElementById('tab-'+next).focus();e.preventDefault();
+      });
+      function setup(id,resultId,describe){
+        document.getElementById(id).addEventListener('submit',function(e){
+          e.preventDefault();
+          if(!e.currentTarget.reportValidity())return;
+          var result=document.getElementById(resultId);
+          result.textContent='✓ Проверка полей пройдена.\n'+describe()+'\n\nЭто только отображение результата в браузере. Ничего не отправлено и не сохранено.';
+          result.classList.add('show');
+        });
+      }
+      setup('expert-form','expert-result',function(){
+        return 'Область: '+document.getElementById('expert-field').value+'\nФормат: '+document.getElementById('expert-task').value;
+      });
+      setup('team-form','team-result',function(){
+        return 'Учебный проект: '+document.getElementById('team-name').value+'\nЦель: '+document.getElementById('team-goal').value+'\nВидимость (макет): '+document.getElementById('team-visibility').selectedOptions[0].text;
+      });
+    }());
+  </script>
+</body>
+</html>
