@@ -14,6 +14,16 @@ body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minm
 .audience-item[open] summary::after{content:"−"}
 .audience-item summary:hover,.audience-item summary:focus-visible{border-color:#93dfff;background:rgba(147,223,255,.09)}
 .audience-content{min-height:140px;margin-top:16px;border:1px solid rgba(234,250,255,.17);border-radius:12px;background:rgba(8,11,22,.25);text-align:left}
+.audience-copy{padding:18px;color:#fff;font-size:16px;line-height:1.6}
+.audience-copy p{margin:0 0 14px}
+.audience-copy p:last-child{margin-bottom:0}
+.audience-copy ul{margin:0 0 16px;padding-left:1.35em}
+.audience-copy li+li{margin-top:10px}
+.audience-copy a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.audience-copy a:hover,.audience-copy a:focus-visible{text-decoration-thickness:2px}
+.article-draft h1{font-size:24px;font-weight:400;line-height:1.4;margin:0 0 16px}
+.article-draft p{margin:0 0 14px}
+.article-draft p:last-child{margin-bottom:0}
 .site-footer{grid-column:1/-1}
 .site-grid{width:min(100%,var(--page-width));margin-inline:auto;padding-inline:var(--gutter);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
 .hero{grid-column:1/-1;text-align:center;padding-top:clamp(12px,2vh,24px)}
