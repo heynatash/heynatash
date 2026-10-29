@@ -60,24 +60,20 @@
   </section>
   <section class="audience-panel" aria-label="Информация для коллег и стартапов">
     <div class="audience-accordion">
-      <details class="audience-item" name="audience">
-        <summary>Коллегам</summary>
-        <div class="audience-content">
-          <div class="audience-copy">
-            <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
-            <ul>
-              <li>Помогу пересобрать резюме под выбранную роль</li>
-              <li>Помогу определиться с направлением вне медицины</li>
-            </ul>
-            <p><a href="/medbiotech/">Как зайти в медбиотех?</a></p>
-          </div>
-        </div>
-      </details>
-      <details class="audience-item" name="audience">
-        <summary>Стартапам</summary>
-        <div class="audience-content"></div>
-      </details>
+      <button class="audience-toggle" type="button" aria-expanded="false" aria-controls="colleagues-content">Коллегам</button>
+      <button class="audience-toggle" type="button" aria-expanded="false" aria-controls="startups-content">Стартапам</button>
     </div>
+    <div class="audience-content" id="colleagues-content" hidden>
+      <div class="audience-copy">
+        <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
+        <ul>
+          <li>Помогу пересобрать резюме под выбранную роль</li>
+          <li>Помогу определиться с направлением вне медицины</li>
+        </ul>
+        <p><a href="/medbiotech/">Как зайти в медбиотех?</a></p>
+      </div>
+    </div>
+    <div class="audience-content" id="startups-content" hidden></div>
   </section>
 </main>
 <footer class="site-footer site-grid">
@@ -96,6 +92,25 @@
   if (link) {
     link.href = 'mai' + 'lto:' + email;
   }
+})();
+</script>
+<script>
+(function () {
+  // Обе кнопки управляют отдельными панелями во всю ширину общего блока.
+  var container = document.querySelector('.audience-panel');
+  if (!container) return;
+  var buttons = Array.from(container.querySelectorAll('.audience-toggle'));
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var expand = button.getAttribute('aria-expanded') !== 'true';
+      buttons.forEach(function (other) {
+        var active = other === button && expand;
+        other.setAttribute('aria-expanded', String(active));
+        var target = document.getElementById(other.getAttribute('aria-controls'));
+        if (target) target.hidden = !active;
+      });
+    });
+  });
 })();
 </script>
 </body>
