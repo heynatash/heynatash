@@ -17,19 +17,27 @@
   "sameAs": ["https://www.linkedin.com/in/nserikova/"]
 }
 </script>
-<style>
-html,body{margin:0;min-height:100%;background:radial-gradient(at 30% 20%,#173447,#080b16 70%);color:#eafaff;font-family:system-ui}
-main{text-align:center;position:relative;margin:32vh auto 0;padding:24px}
-h1{font-weight:400;font-size:clamp(44px,10vw,88px);margin:0 0 12px}
-p{color:#a8bdca}
-
-.social-links{display:flex;justify-content:center;gap:10px;margin:14px 0 0}
-.social-links a{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid rgba(168,189,202,.4);border-radius:999px;color:#d7eff8;text-decoration:none;font-size:13px;line-height:1.4;transition:border-color .2s,background .2s}
-.social-links a:hover,.social-links a:focus-visible{border-color:#93dfff;background:rgba(147,223,255,.09)}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<main><h1>Наталья Серикова, медицинский эксперт</h1><nav class="social-links" aria-label="Профессиональные профили"><a href="https://www.linkedin.com/in/nserikova/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Натальи Сериковой">LinkedIn <span aria-hidden="true">↗</span></a></nav></main>
-<footer style="position:fixed;bottom:12px;left:12px;right:12px;text-align:center;font-size:12px;color:#a8bdca;opacity:.8;z-index:1">Наталья Серикова, врач анестезиолог-реаниматолог, медицинский эксперт</footer>
+<main class="site-main site-grid">
+  <header class="hero">
+    <h1>Наталья Серикова, медицинский эксперт</h1>
+    <nav class="social-links" aria-label="Профессиональные профили">
+      <a href="https://www.linkedin.com/in/nserikova/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Натальи Сериковой">LinkedIn <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <section class="about-panel" aria-labelledby="about-title">
+    <h2 id="about-title">О себе</h2>
+    <p>Наталья Серикова, врач-анестезиолог-реаниматолог.</p>
+    <p>Основатель пространства для врачей и технических команд — <strong><a href="https://docs2tech.ru/">docs2tech.ru</a></strong>.</p>
+  </section>
+</main>
+<footer class="site-footer site-grid">
+  <div class="footer-text">Наталья Серикова, врач-анестезиолог-реаниматолог, медицинский эксперт</div>
+</footer>
 </body>
 </html>
