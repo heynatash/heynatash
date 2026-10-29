@@ -3,7 +3,9 @@
 *{box-sizing:border-box}
 html{min-height:100%}
 body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:1fr auto;background:radial-gradient(at 30% 20%,#173447,#080b16 70%);color:#eafaff;font-family:"Noto Sans",system-ui,sans-serif}
-.site-main,.audience-panel{grid-column:3/span 8;margin-top:24px;padding:clamp(20px,3vw,36px);border:1px solid rgba(234,250,255,.17);border-radius:16px;background:rgba(8,11,22,.34)}
+.site-main,.site-footer{grid-column:1/-1}
+.site-main{align-content:start}
+.audience-panel{grid-column:3/span 8;margin-top:24px;padding:clamp(20px,3vw,36px);border:1px solid rgba(234,250,255,.17);border-radius:16px;background:rgba(8,11,22,.34)}
 .audience-accordion{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
 .audience-item{min-width:0;text-align:center}
 .audience-item summary{display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;list-style:none;border:1px solid rgba(168,189,202,.4);border-radius:999px;padding:10px 16px;color:#fff;font:400 16px/1.4 "Noto Sans",system-ui,sans-serif;transition:border-color .2s,background .2s}
@@ -14,7 +16,7 @@ body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minm
 .audience-content{min-height:140px;margin-top:16px;border:1px solid rgba(234,250,255,.17);border-radius:12px;background:rgba(8,11,22,.25);text-align:left}
 .site-footer{grid-column:1/-1}
 .site-grid{width:min(100%,var(--page-width));margin-inline:auto;padding-inline:var(--gutter);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
-.hero{grid-column:1/-1;text-align:center;padding-top:clamp(72px,18vh,170px)}
+.hero{grid-column:1/-1;text-align:center;padding-top:clamp(24px,5vh,56px)}
 .hero h1{font-weight:400;font-size:20px;line-height:1.4;margin:0 0 6px}
 .hero-role{font-size:16px;line-height:1.5;margin:0 0 20px;color:#eafaff}
 .social-links{display:flex;justify-content:center;gap:10px}
