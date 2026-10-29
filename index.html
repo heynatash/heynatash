@@ -6,6 +6,16 @@
 <title>Наталья Серикова</title>
 <meta name="description" content="Наталья Серикова — медицинский эксперт, врач анестезиолог-реаниматолог. Hey Natash — персональный сайт Натальи Сериковой.">
 <link rel="canonical" href="https://heynatash.ru/">
+<script>
+(function () {
+  // Направлять на основной HTTPS-домен, сохраняя путь, параметры и якорь.
+  var host = location.hostname.toLowerCase();
+  var local = host === 'localhost' || host === '127.0.0.1' || host === '[::1]' || location.protocol === 'file:';
+  if (!local && location.origin !== 'https://heynatash.ru') {
+    location.replace('https://heynatash.ru' + location.pathname + location.search + location.hash);
+  }
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,7 +47,7 @@
     <p class="hero-role">MD, Medical Advisor</p>
     <nav class="social-links" aria-label="Профессиональные профили">
       <a href="https://www.linkedin.com/in/nserikova/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Натальи Сериковой">LinkedIn <span aria-hidden="true">↗</span></a>
-      <a href="mailto:serikovanatalya@mail.ru" aria-label="Написать Наталье Сериковой по электронной почте">Почта <span aria-hidden="true">↗</span></a>
+      <a id="contact-email" aria-label="Написать Наталье Сериковой по электронной почте">Почта <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <section class="about-panel" aria-labelledby="about-heading">
@@ -64,5 +74,20 @@
 <footer class="site-footer site-grid">
   <div class="footer-text">Наталья Серикова, врач-анестезиолог-реаниматолог, медицинский эксперт</div>
 </footer>
+<script>
+(function () {
+  // Лёгкая маскировка от ботов, считывающих только исходный HTML.
+  var data = '5b283e293230342d3a353a2f3a37223a1b363a323775292e';
+  var key = parseInt(data.slice(0, 2), 16);
+  var email = '';
+  for (var i = 2; i < data.length; i += 2) {
+    email += String.fromCharCode(parseInt(data.slice(i, i + 2), 16) ^ key);
+  }
+  var link = document.getElementById('contact-email');
+  if (link) {
+    link.href = 'mai' + 'lto:' + email;
+  }
+})();
+</script>
 </body>
 </html>
