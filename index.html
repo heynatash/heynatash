@@ -20,7 +20,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261029-layout2">
+<link rel="stylesheet" href="/styles.css?v=20261029-layout3">
+<!-- Diagnostic marker: compare this in View Source to verify the currently deployed HTML -->
+<meta name="heynatash-build" content="20261029-top-layout-verified">
+<style id="homepage-critical-layout">
+/* Keep essential homepage geometry in HTML so stale external CSS cannot retain the old spacing. */
+.site-main { grid-column:1/-1; align-content:start; margin-top:0; border:0; background:transparent; padding-top:0; padding-bottom:0; }
+.hero { padding-top:clamp(12px,2vh,24px); }
+.about-panel { margin-top:24px; }
+</style>
 </head>
 <body>
 <main class="site-main site-grid">
