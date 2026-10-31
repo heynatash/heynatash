@@ -1,44 +1,44 @@
 /* Общая двенадцатиколоночная сетка для страниц Hey Natash */
-:root{color-scheme:dark;--page-width:1200px;--gutter:clamp(20px,4vw,56px);--grid-gap:clamp(12px,2vw,24px)}
+:root{color-scheme:light;--page-width:1200px;--gutter:clamp(20px,4vw,56px);--grid-gap:clamp(12px,2vw,24px)}
 *{box-sizing:border-box}
 html{min-height:100%}
-body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:1fr auto;background:radial-gradient(at 30% 20%,#173447,#080b16 70%);color:#eafaff;font-family:"Noto Sans",system-ui,sans-serif}
+body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:1fr auto;background-color:#ffffff;background-image:radial-gradient(circle,#C5E0F3 1px,transparent 1.2px);background-size:19px 19px;color:#000000;font-family:"Noto Sans",system-ui,sans-serif}
 .site-main,.site-footer{grid-column:1/-1}
 .site-main{align-content:start}
-.audience-panel{grid-column:3/span 8;margin-top:24px;padding:clamp(20px,3vw,36px);border:1px solid rgba(234,250,255,.17);border-radius:16px;background:rgba(8,11,22,.34)}
+.audience-panel{grid-column:3/span 8;margin-top:24px;padding:clamp(20px,3vw,36px);border:1px solid rgba(0,0,0,.18);border-radius:16px;background:rgba(255,255,255,.92)}
 .audience-accordion{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.audience-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-width:0;cursor:pointer;appearance:none;border:1px solid rgba(168,189,202,.4);border-radius:999px;background:transparent;padding:10px 16px;color:#fff;font:400 16px/1.4 "Noto Sans",system-ui,sans-serif;transition:border-color .2s,background .2s}
+.audience-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-width:0;cursor:pointer;appearance:none;border:1px solid rgba(0,0,0,.35);border-radius:999px;background:transparent;padding:10px 16px;color:#000000;font:400 16px/1.4 "Noto Sans",system-ui,sans-serif;transition:border-color .2s,background .2s}
 .audience-toggle::after{content:"+";font-size:18px;line-height:1}
 .audience-toggle[aria-expanded="true"]::after{content:"−"}
-.audience-toggle:hover,.audience-toggle:focus-visible{border-color:#93dfff;background:rgba(147,223,255,.09)}
-.audience-toggle:focus-visible{outline:2px solid #93dfff;outline-offset:3px}
-.audience-content{width:100%;min-height:140px;margin-top:16px;border:1px solid rgba(234,250,255,.17);border-radius:12px;background:rgba(8,11,22,.25);text-align:left}
+.audience-toggle:hover,.audience-toggle:focus-visible{border-color:#356e91;background:rgba(197,224,243,.45)}
+.audience-toggle:focus-visible{outline:2px solid #356e91;outline-offset:3px}
+.audience-content{width:100%;min-height:140px;margin-top:16px;border:1px solid rgba(0,0,0,.18);border-radius:12px;background:rgba(255,255,255,.88);text-align:left}
 .audience-content[hidden]{display:none}
-.audience-copy{padding:18px;color:#fff;font-size:16px;line-height:1.6}
+.audience-copy{padding:18px;color:#000000;font-size:16px;line-height:1.6}
 .audience-copy p{margin:0 0 14px}
 .audience-copy p:last-child{margin-bottom:0}
 .audience-copy ul{margin:0 0 16px;padding-left:1.35em}
 .audience-copy li+li{margin-top:10px}
-.audience-copy a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.audience-copy a{color:#000000;text-decoration:underline;text-underline-offset:3px}
 .audience-copy a:hover,.audience-copy a:focus-visible{text-decoration-thickness:2px}
 .article-draft h1{font-size:24px;font-weight:400;line-height:1.4;margin:0 0 16px}
 .article-draft p{margin:0 0 14px}
 .article-draft p:last-child{margin-bottom:0}
 .site-footer{grid-column:1/-1}
 .site-grid{width:min(100%,var(--page-width));margin-inline:auto;padding-inline:var(--gutter);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--grid-gap)}
-.hero{grid-column:1/-1;text-align:center;padding-top:clamp(12px,2vh,24px)}
+.hero{grid-column:1/-1;text-align:center;padding-top:clamp(12px,2vh,24px);background-color:#ffffff;background-image:radial-gradient(circle,#C5E0F3 1px,transparent 1.2px);background-size:19px 19px}
 .hero h1{font-weight:400;font-size:20px;line-height:1.4;margin:0 0 6px}
-.hero-role{font-size:16px;line-height:1.5;margin:0 0 20px;color:#eafaff}
+.hero-role{font-size:16px;line-height:1.5;margin:0 0 20px;color:#000000}
 .social-links{display:flex;justify-content:center;gap:10px}
-.social-links a{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid rgba(168,189,202,.4);border-radius:999px;color:#d7eff8;text-decoration:none;font-size:13px;line-height:1.4;transition:border-color .2s,background .2s}
-.social-links a:hover,.social-links a:focus-visible{border-color:#93dfff;background:rgba(147,223,255,.09)}
-.about-panel{grid-column:3/span 8;margin-top:24px;padding:clamp(20px,3vw,36px);text-align:left;color:#fff;background:rgba(8,11,22,.34);border:1px solid rgba(234,250,255,.17);border-radius:16px;font-family:"Noto Sans",system-ui,sans-serif;font-size:18px;font-weight:400;line-height:1.6}
+.social-links a{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid rgba(0,0,0,.35);border-radius:999px;color:#000000;text-decoration:none;font-size:13px;line-height:1.4;transition:border-color .2s,background .2s}
+.social-links a:hover,.social-links a:focus-visible{border-color:#356e91;background:rgba(197,224,243,.45)}
+.about-panel{grid-column:3/span 8;margin-top:24px;padding:clamp(20px,3vw,36px);text-align:left;color:#000000;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.18);border-radius:16px;font-family:"Noto Sans",system-ui,sans-serif;font-size:18px;font-weight:400;line-height:1.6}
 .about-panel h2{font-size:20px;font-weight:700;line-height:1.5;text-align:left;margin:0 0 16px}
 .about-facts{margin:0;padding-left:1.35em}
 .about-facts li+li{margin-top:12px}
-.about-panel a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.about-panel a{color:#000000;text-decoration:underline;text-underline-offset:3px}
 .about-panel a:hover,.about-panel a:focus-visible{text-decoration-thickness:2px}
 .site-footer{padding-block:36px 16px}
-.footer-text{grid-column:1/-1;text-align:center;color:#a8bdca;font-size:12px}
+.footer-text{grid-column:1/-1;text-align:center;color:#000000;font-size:12px}
 @media(max-width:800px){.about-panel,.audience-panel{grid-column:1/-1}}
 @media(max-width:420px){.audience-accordion{gap:8px}.audience-panel{padding:16px}.audience-toggle{padding:10px 8px;font-size:14px}}
