@@ -101,9 +101,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261031-article">
+<link rel="stylesheet" href="/styles.css?v=20261031-blue-nav">
 </head>
-<body>
+<body class="has-site-nav">
+<header class="site-nav" id="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-brand" href="/" aria-label="Hey, Наташ — на главную">
+      <strong>Hey, Наташ</strong><span>Medical Advisor</span>
+    </a>
+    <nav class="site-nav-links" id="site-nav-links" aria-label="Основная навигация">
+      <a href="/#about-content">Обо мне</a>
+      <a href="/#colleagues-content">Коллегам</a>
+      <a href="/#startups-content">Стартапам</a>
+      <a href="/doctor-to-startup/">Статья</a>
+    </nav>
+    <div class="site-nav-cta">
+      <a class="site-nav-contact" href="/#contacts">Контакты</a>
+      <button class="site-nav-burger" type="button" aria-label="Открыть меню" aria-controls="site-nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
 <main class="site-main site-grid">
   <article class="article-page" aria-labelledby="article-title">
     <nav class="article-nav" aria-label="Навигация по сайту"><a href="/">← На главную</a></nav>
@@ -194,5 +214,6 @@
 <footer class="site-footer site-grid">
   <div class="footer-text">Наталья Серикова, врач-анестезиолог-реаниматолог, медицинский советник</div>
 </footer>
+<script src="/site-nav.js?v=20261031-blue-nav" defer></script>
 </body>
 </html>
