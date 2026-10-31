@@ -48,7 +48,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261031-editorial-sidebar">
+<link rel="stylesheet" href="/styles.css?v=20261031-blue-nav">
 <!-- Diagnostic marker: compare this in View Source to verify the currently deployed HTML -->
 <meta name="heynatash-build" content="20261029-top-layout-verified">
 <style id="homepage-critical-layout">
@@ -58,12 +58,32 @@
 .about-panel { margin-top:24px; }
 </style>
 </head>
-<body class="home-page">
+<body class="home-page has-site-nav">
+<header class="site-nav" id="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-brand" href="/" aria-label="Hey, Наташ — на главную">
+      <strong>Hey, Наташ</strong><span>Medical Advisor</span>
+    </a>
+    <nav class="site-nav-links" id="site-nav-links" aria-label="Основная навигация">
+      <a href="/#about-content">Обо мне</a>
+      <a href="/#colleagues-content">Коллегам</a>
+      <a href="/#startups-content">Стартапам</a>
+      <a href="/doctor-to-startup/">Статья</a>
+    </nav>
+    <div class="site-nav-cta">
+      <a class="site-nav-contact" href="/#contacts">Контакты</a>
+      <button class="site-nav-burger" type="button" aria-label="Открыть меню" aria-controls="site-nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
 <main class="site-main site-grid">
   <header class="hero">
     <h1>Наталья Серикова</h1>
     <p class="hero-role">MD, Medical Advisor</p>
-    <nav class="social-links" aria-label="Профессиональные профили">
+    <nav class="social-links" id="contacts" aria-label="Профессиональные профили">
       <a href="https://www.linkedin.com/in/nserikova/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Натальи Сериковой">LinkedIn <span aria-hidden="true">↗</span></a>
       <a id="contact-email" aria-label="Написать Наталье Сериковой по электронной почте">Почта <span aria-hidden="true">↗</span></a>
     </nav>
@@ -120,24 +140,50 @@
 </script>
 <script>
 (function () {
-  // Переключение содержимого одного текстового поля.
+  // Локальные кнопки и якорные ссылки верхней навигации используют единое состояние.
   var section = document.querySelector('.home-info-layout');
   var about = document.getElementById('about-content');
   if (!section || !about) return;
   var buttons = Array.from(section.querySelectorAll('.audience-toggle'));
+  var sections = ['colleagues-content', 'startups-content'];
+
+  function showPanel(id) {
+    var isSecondary = sections.indexOf(id) !== -1;
+    about.hidden = isSecondary;
+    buttons.forEach(function (button) {
+      var selected = isSecondary && button.getAttribute('aria-controls') === id;
+      button.setAttribute('aria-expanded', String(selected));
+      var content = document.getElementById(button.getAttribute('aria-controls'));
+      if (content) content.hidden = !selected;
+    });
+  }
+
   buttons.forEach(function (button) {
     button.addEventListener('click', function () {
-      var open = button.getAttribute('aria-expanded') !== 'true';
-      about.hidden = open;
-      buttons.forEach(function (other) {
-        var selected = other === button && open;
-        other.setAttribute('aria-expanded', String(selected));
-        var content = document.getElementById(other.getAttribute('aria-controls'));
-        if (content) content.hidden = !selected;
-      });
+      var id = button.getAttribute('aria-controls');
+      showPanel(button.getAttribute('aria-expanded') === 'true' ? 'about-content' : id);
     });
   });
+
+  function showHashSection(scrollToPanel) {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (id !== 'about-content' && sections.indexOf(id) === -1) return;
+    showPanel(id);
+    var target = document.getElementById(id);
+    if (scrollToPanel && target) target.scrollIntoView({ block: 'start' });
+  }
+
+  document.querySelectorAll('.site-nav-links a[href^="/#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      showHashSection(false);
+      var id = link.getAttribute('href').split('#')[1];
+      if (id === 'about-content' || sections.indexOf(id) !== -1) showPanel(id);
+    });
+  });
+  window.addEventListener('hashchange', function () { showHashSection(true); });
+  showHashSection(Boolean(location.hash));
 })();
 </script>
+<script src="/site-nav.js?v=20261031-blue-nav" defer></script>
 </body>
 </html>
