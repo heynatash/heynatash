@@ -90,7 +90,7 @@ body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minm
   background:var(--home-accent);border-color:#A9C9DC;
 }
 .home-page .home-info-layout{
-  display:grid;grid-template-columns:minmax(0,1fr) 166px;
+  display:grid;grid-template-columns:minmax(0,1fr) 84px;
   gap:clamp(28px,4vw,56px);align-items:start;margin-top:clamp(36px,5vw,56px);
   font-size:16px;line-height:1.65;
 }
@@ -105,11 +105,11 @@ body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minm
 .home-page .audience-copy{padding:0;font-size:16px;line-height:1.65}
 .home-page .home-info-controls{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding-top:3px}
 .home-page .audience-toggle{
-  width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;
-  padding:12px 14px;border:1px solid var(--home-dots);border-radius:8px;
-  background:#FFFFFF;color:var(--home-text);font:400 15px/1.5 "Noto Sans",system-ui,sans-serif;
+  width:84px;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:12px 5px;border:1px solid var(--home-dots);border-radius:8px;
+  background:#FFFFFF;color:var(--home-text);font:400 12px/1.5 "Noto Sans",system-ui,sans-serif;
 }
-.home-page .audience-toggle::after{flex-shrink:0;font-size:19px;line-height:1}
+.home-page .audience-toggle::after{display:none}
 .home-page .audience-toggle:hover,.home-page .audience-toggle[aria-expanded="true"],
 .home-page .audience-toggle:focus-visible{background:var(--home-accent);border-color:#A9C9DC}
 .home-page .audience-toggle:focus-visible{outline:2px solid #356E91;outline-offset:3px}
@@ -125,9 +125,9 @@ body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minm
 @media(max-width:640px){
   .home-page .home-info-layout{grid-template-columns:minmax(0,1fr);gap:22px}
   .home-page .home-info-controls{order:-1;flex-direction:row;padding-top:0;gap:10px}
-  .home-page .audience-toggle{flex:1;min-width:0}
+  .home-page .audience-toggle{flex:1;min-width:0;width:auto;font-size:15px}
 }
 @media(max-width:420px){
-  .home-page .audience-toggle{padding:12px 13px;font-size:15px}
+  .home-page .audience-toggle{padding:12px 9px;font-size:15px}
   .home-page .hero-role{font-size:16px}
 }
