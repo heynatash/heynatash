@@ -20,12 +20,29 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Наталья Серикова",
-  "jobTitle": "Медицинский советник",
-  "description": "Врач-анестезиолог-реаниматолог, медицинский советник в биомедтех-командах на ранних стадиях разработки продукта. Основатель Docs2Tech.",
-  "url": "https://heynatash.ru/",
-  "sameAs": ["https://www.linkedin.com/in/nserikova/"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://heynatash.ru/#person",
+      "name": "Наталья Серикова",
+      "jobTitle": "Медицинский советник",
+      "description": "Врач-анестезиолог-реаниматолог, медицинский советник в биомедтех-командах на ранних стадиях разработки продукта. Основатель Docs2Tech.",
+      "url": "https://heynatash.ru/",
+      "sameAs": [
+        "https://www.linkedin.com/in/nserikova/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://heynatash.ru/#website",
+      "name": "Hey, Наташ",
+      "url": "https://heynatash.ru/",
+      "inLanguage": "ru-RU",
+      "publisher": {
+        "@id": "https://heynatash.ru/#person"
+      }
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
