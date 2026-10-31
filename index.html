@@ -48,7 +48,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261031-editorial-preview">
+<link rel="stylesheet" href="/styles.css?v=20261031-editorial-sidebar">
 <!-- Diagnostic marker: compare this in View Source to verify the currently deployed HTML -->
 <meta name="heynatash-build" content="20261029-top-layout-verified">
 <style id="homepage-critical-layout">
@@ -68,33 +68,35 @@
       <a id="contact-email" aria-label="Написать Наталье Сериковой по электронной почте">Почта <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
-  <section class="about-panel" aria-labelledby="about-heading">
-    <h2 id="about-heading">Обо мне за последние 7 лет:</h2>
-    <ul class="about-facts">
-      <li>Врач-анестезиолог-реаниматолог</li>
-      <li>Основатель пространства для врачей и технических команд — <strong><a href="https://docs2tech.ru/">docs2tech.ru</a></strong></li>
-      <li>Медицинский советник в биомедтех-командах на ранних стадиях разработки продукта</li>
-    </ul>
-  </section>
-  <section class="audience-panel" aria-label="Информация для коллег и стартапов">
-    <div class="audience-accordion">
+  <section class="home-info-layout" aria-label="Обо мне и разделы для посетителей">
+    <div class="home-info-content" aria-live="polite">
+      <section class="home-info-panel" id="about-content" aria-labelledby="about-heading">
+        <h2 id="about-heading">Обо мне за последние 7 лет:</h2>
+        <div class="about-facts">
+          <p>Врач-анестезиолог-реаниматолог</p>
+          <p>Основатель пространства для врачей и технических команд — <strong><a href="https://docs2tech.ru/">docs2tech.ru</a></strong></p>
+          <p>Медицинский советник в биомедтех-командах на ранних стадиях разработки продукта</p>
+        </div>
+      </section>
+      <section class="home-info-panel" id="colleagues-content" aria-labelledby="colleagues-heading" hidden>
+        <h2 id="colleagues-heading">Коллегам</h2>
+        <div class="audience-copy">
+          <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
+          <p>Помогу пересобрать резюме под выбранную роль</p>
+          <p>Помогу определиться с направлением вне медицины</p>
+          <p><a href="/doctor-to-startup/">Хочешь уйти в медтех-стартап?</a></p>
+        </div>
+      </section>
+      <section class="home-info-panel" id="startups-content" aria-labelledby="startups-heading" hidden>
+        <h2 id="startups-heading">Стартапам</h2>
+        <div class="audience-copy">
+          <p><a href="/medtech-startup/">Как сделать медтех стартап?</a></p>
+        </div>
+      </section>
+    </div>
+    <div class="home-info-controls" role="group" aria-label="Выбрать раздел">
       <button class="audience-toggle" type="button" aria-expanded="false" aria-controls="colleagues-content">Коллегам</button>
       <button class="audience-toggle" type="button" aria-expanded="false" aria-controls="startups-content">Стартапам</button>
-    </div>
-    <div class="audience-content" id="colleagues-content" hidden>
-      <div class="audience-copy">
-        <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
-        <ul>
-          <li>Помогу пересобрать резюме под выбранную роль</li>
-          <li>Помогу определиться с направлением вне медицины</li>
-        </ul>
-        <p><a href="/doctor-to-startup/">Хочешь уйти в медтех-стартап?</a></p>
-      </div>
-    </div>
-    <div class="audience-content" id="startups-content" hidden>
-      <div class="audience-copy">
-        <p><a href="/medtech-startup/">Как сделать медтех стартап?</a></p>
-      </div>
     </div>
   </section>
 </main>
@@ -118,18 +120,20 @@
 </script>
 <script>
 (function () {
-  // Обе кнопки управляют отдельными панелями во всю ширину общего блока.
-  var container = document.querySelector('.audience-panel');
-  if (!container) return;
-  var buttons = Array.from(container.querySelectorAll('.audience-toggle'));
+  // Переключение содержимого одного текстового поля.
+  var section = document.querySelector('.home-info-layout');
+  var about = document.getElementById('about-content');
+  if (!section || !about) return;
+  var buttons = Array.from(section.querySelectorAll('.audience-toggle'));
   buttons.forEach(function (button) {
     button.addEventListener('click', function () {
-      var expand = button.getAttribute('aria-expanded') !== 'true';
+      var open = button.getAttribute('aria-expanded') !== 'true';
+      about.hidden = open;
       buttons.forEach(function (other) {
-        var active = other === button && expand;
-        other.setAttribute('aria-expanded', String(active));
-        var target = document.getElementById(other.getAttribute('aria-controls'));
-        if (target) target.hidden = !active;
+        var selected = other === button && open;
+        other.setAttribute('aria-expanded', String(selected));
+        var content = document.getElementById(other.getAttribute('aria-controls'));
+        if (content) content.hidden = !selected;
       });
     });
   });
