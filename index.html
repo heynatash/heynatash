@@ -47,8 +47,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20261031-light-dots">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20261031-blue-nav">
 <!-- Diagnostic marker: compare this in View Source to verify the currently deployed HTML -->
 <meta name="heynatash-build" content="20261029-top-layout-verified">
 <style id="homepage-critical-layout">
@@ -58,43 +58,65 @@
 .about-panel { margin-top:24px; }
 </style>
 </head>
-<body>
+<body class="home-page has-site-nav">
+<header class="site-nav" id="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-brand" href="/" aria-label="Раздаю советы — на главную">
+      <strong>раздаю советы</strong><span>медицинские и карьерные</span>
+    </a>
+    <nav class="site-nav-links" id="site-nav-links" aria-label="Основная навигация">
+      <a href="/#about-content">Обо мне</a>
+      <a href="/#colleagues-content">Коллегам</a>
+      <a href="/#startups-content">Стартапам</a>
+      <a href="/doctor-to-startup/">Полезное</a>
+    </nav>
+    <div class="site-nav-cta">
+      <a class="site-nav-contact" href="/#contacts">Написать</a>
+      <button class="site-nav-burger" type="button" aria-label="Открыть меню" aria-controls="site-nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
 <main class="site-main site-grid">
   <header class="hero">
     <h1>Наталья Серикова</h1>
     <p class="hero-role">MD, Medical Advisor</p>
-    <nav class="social-links" aria-label="Профессиональные профили">
+    <nav class="social-links" id="contacts" aria-label="Профессиональные профили">
       <a href="https://www.linkedin.com/in/nserikova/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Натальи Сериковой">LinkedIn <span aria-hidden="true">↗</span></a>
       <a id="contact-email" aria-label="Написать Наталье Сериковой по электронной почте">Почта <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
-  <section class="about-panel" aria-labelledby="about-heading">
-    <h2 id="about-heading">Обо мне за последние 7 лет:</h2>
-    <ul class="about-facts">
-      <li>Врач-анестезиолог-реаниматолог</li>
-      <li>Основатель пространства для врачей и технических команд — <strong><a href="https://docs2tech.ru/">docs2tech.ru</a></strong></li>
-      <li>Медицинский советник в биомедтех-командах на ранних стадиях разработки продукта</li>
-    </ul>
-  </section>
-  <section class="audience-panel" aria-label="Информация для коллег и стартапов">
-    <div class="audience-accordion">
+  <section class="home-info-layout" aria-label="Обо мне и разделы для посетителей">
+    <div class="home-info-content" aria-live="polite">
+      <section class="home-info-panel" id="about-content" aria-labelledby="about-heading">
+        <h2 id="about-heading">Обо мне за последние 7 лет:</h2>
+        <div class="about-facts">
+          <p>Врач-анестезиолог-реаниматолог</p>
+          <p>Основатель пространства для врачей и технических команд — <strong><a href="https://docs2tech.ru/">docs2tech.ru</a></strong></p>
+          <p>Медицинский советник в биомедтех-командах на ранних стадиях разработки продукта</p>
+        </div>
+      </section>
+      <section class="home-info-panel" id="colleagues-content" aria-labelledby="colleagues-heading" hidden>
+        <h2 id="colleagues-heading">Коллегам</h2>
+        <div class="audience-copy">
+          <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
+          <p>Помогу пересобрать резюме под выбранную роль</p>
+          <p>Помогу определиться с направлением вне медицины</p>
+          <p><a href="/doctor-to-startup/">Хочешь уйти в медтех-стартап?</a></p>
+        </div>
+      </section>
+      <section class="home-info-panel" id="startups-content" aria-labelledby="startups-heading" hidden>
+        <h2 id="startups-heading">Стартапам</h2>
+        <div class="audience-copy">
+          <p><a href="/medtech-startup/">Как сделать медтех стартап?</a></p>
+        </div>
+      </section>
+    </div>
+    <div class="home-info-controls" role="group" aria-label="Выбрать раздел">
       <button class="audience-toggle" type="button" aria-expanded="false" aria-controls="colleagues-content">Коллегам</button>
       <button class="audience-toggle" type="button" aria-expanded="false" aria-controls="startups-content">Стартапам</button>
-    </div>
-    <div class="audience-content" id="colleagues-content" hidden>
-      <div class="audience-copy">
-        <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
-        <ul>
-          <li>Помогу пересобрать резюме под выбранную роль</li>
-          <li>Помогу определиться с направлением вне медицины</li>
-        </ul>
-        <p><a href="/doctor-to-startup/">Хочешь уйти в медтех-стартап?</a></p>
-      </div>
-    </div>
-    <div class="audience-content" id="startups-content" hidden>
-      <div class="audience-copy">
-        <p><a href="/medtech-startup/">Как сделать медтех стартап?</a></p>
-      </div>
     </div>
   </section>
 </main>
@@ -118,22 +140,50 @@
 </script>
 <script>
 (function () {
-  // Обе кнопки управляют отдельными панелями во всю ширину общего блока.
-  var container = document.querySelector('.audience-panel');
-  if (!container) return;
-  var buttons = Array.from(container.querySelectorAll('.audience-toggle'));
+  // Локальные кнопки и якорные ссылки верхней навигации используют единое состояние.
+  var section = document.querySelector('.home-info-layout');
+  var about = document.getElementById('about-content');
+  if (!section || !about) return;
+  var buttons = Array.from(section.querySelectorAll('.audience-toggle'));
+  var sections = ['colleagues-content', 'startups-content'];
+
+  function showPanel(id) {
+    var isSecondary = sections.indexOf(id) !== -1;
+    about.hidden = isSecondary;
+    buttons.forEach(function (button) {
+      var selected = isSecondary && button.getAttribute('aria-controls') === id;
+      button.setAttribute('aria-expanded', String(selected));
+      var content = document.getElementById(button.getAttribute('aria-controls'));
+      if (content) content.hidden = !selected;
+    });
+  }
+
   buttons.forEach(function (button) {
     button.addEventListener('click', function () {
-      var expand = button.getAttribute('aria-expanded') !== 'true';
-      buttons.forEach(function (other) {
-        var active = other === button && expand;
-        other.setAttribute('aria-expanded', String(active));
-        var target = document.getElementById(other.getAttribute('aria-controls'));
-        if (target) target.hidden = !active;
-      });
+      var id = button.getAttribute('aria-controls');
+      showPanel(button.getAttribute('aria-expanded') === 'true' ? 'about-content' : id);
     });
   });
+
+  function showHashSection(scrollToPanel) {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (id !== 'about-content' && sections.indexOf(id) === -1) return;
+    showPanel(id);
+    var target = document.getElementById(id);
+    if (scrollToPanel && target) target.scrollIntoView({ block: 'start' });
+  }
+
+  document.querySelectorAll('.site-nav-links a[href^="/#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      showHashSection(false);
+      var id = link.getAttribute('href').split('#')[1];
+      if (id === 'about-content' || sections.indexOf(id) !== -1) showPanel(id);
+    });
+  });
+  window.addEventListener('hashchange', function () { showHashSection(true); });
+  showHashSection(Boolean(location.hash));
 })();
 </script>
+<script src="/site-nav.js?v=20261031-blue-nav" defer></script>
 </body>
 </html>
