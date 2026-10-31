@@ -131,3 +131,76 @@ body{margin:0;min-height:100vh;display:grid;grid-template-columns:repeat(12,minm
   .home-page .audience-toggle{padding:12px 9px;font-size:15px}
   .home-page .hero-role{font-size:16px}
 }
+
+
+/* Навигация с эффектом матового стекла и мягкой голубой тенью.
+   Отдельные классы не влияют на внутренние навигации статей и Docs2Tech. */
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body.has-site-nav{grid-template-rows:auto 1fr auto}
+.site-nav{
+  grid-column:1/-1;position:sticky;top:0;z-index:60;align-self:start;
+  background:rgba(255,255,255,.83);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease,box-shadow .3s ease;
+}
+.site-nav.scrolled{
+  border-bottom-color:rgba(197,224,243,.55);
+  box-shadow:0 8px 30px -16px rgba(140,190,225,.35);
+}
+.site-nav-inner{
+  width:min(100%,1200px);min-height:76px;
+  margin-inline:auto;padding:12px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  position:relative;
+}
+.site-brand{display:flex;flex-direction:column;flex-shrink:0;gap:2px;color:#111;text-decoration:none;line-height:1.2}
+.site-brand strong{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.site-brand span{font-size:11px;color:#57636c;letter-spacing:.015em}
+.site-nav-links{display:flex;align-items:center;gap:34px}
+.site-nav-links a{color:#111;text-decoration:none;font-size:14px;line-height:1.5;white-space:nowrap;transition:color .2s}
+.site-nav-links a:hover{color:#356e91}
+.site-nav-cta{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.site-nav-contact{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 18px;background:#fff;color:#111;text-decoration:none;
+  border:1px solid #C5E0F3;border-radius:999px;font-size:14px;font-weight:600;
+  white-space:nowrap;transition:background .2s,border-color .2s;
+}
+.site-nav-contact:hover{background:#F1F7FC;border-color:#A9C9DC}
+.site-nav a:focus-visible,.site-nav button:focus-visible{outline:2px solid #356E91;outline-offset:4px}
+.site-nav-burger{display:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;background:transparent;border:0;padding:11px;cursor:pointer}
+.site-nav-burger span{width:20px;height:2px;background:#111;display:block;border-radius:2px}
+@media(max-width:900px){
+  .site-nav-inner{gap:16px}
+  .site-nav-links{gap:18px}
+  .site-nav-links a{font-size:13px}
+}
+@media(max-width:760px){
+  .site-nav-inner{min-height:66px;padding-block:10px}
+  .site-nav-cta{gap:8px}
+  .site-nav-contact{padding:8px 13px;font-size:13px}
+  /* Без JavaScript ссылки остаются видимыми и доступными. */
+  .site-nav-links{flex-wrap:wrap;gap:10px 14px}
+  .nav-ready .site-nav-links{
+    display:none;position:absolute;top:100%;left:var(--gutter);right:var(--gutter);
+    flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(255,255,255,.98);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    border:1px solid #D7E9F6;border-radius:0 0 14px 14px;
+    box-shadow:0 18px 30px -22px rgba(140,190,225,.5);
+    padding:8px 14px 12px;
+  }
+  .nav-ready .site-nav-links.is-open{display:flex}
+  .nav-ready .site-nav-links a{font-size:15px;padding:12px 6px;white-space:normal}
+  .nav-ready .site-nav-burger{display:inline-flex}
+}
+@media(max-width:420px){
+  .site-brand strong{font-size:15px}
+  .site-brand span{font-size:10px}
+  .site-nav-inner{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .site-nav,.site-nav-links a,.site-nav-contact{transition:none}
+}
