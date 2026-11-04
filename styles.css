@@ -249,3 +249,38 @@ body.has-site-nav{grid-template-rows:auto 1fr auto}
 .home-page .recognition-item strong{font-size:17px;line-height:1.4;font-weight:600}
 .home-page .recognition-item span{font-size:13px;line-height:1.5;color:#334754}
 @media(max-width:650px){.home-page .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .recognition-grid{grid-template-columns:1fr}}
+
+/* Task-oriented guides and resource cards — 2026-11-04 */
+.guide-page .guide-label{font-size:12px;color:#516774;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px}
+.guide-page .guide-lead{font-size:clamp(17px,2vw,20px);line-height:1.55;color:#1E303B;margin:0 0 19px}
+.guide-page .article-byline{margin:0 0 26px}
+.guide-page section{scroll-margin-top:105px}
+.guide-page section>h2{margin-top:36px}
+.guide-page .article-summary h2{margin:0 0 8px}
+.guide-page .guide-hint{font-size:14px;line-height:1.65;color:#3B5362;padding:12px 16px;border-left:3px solid #B3D1E5;background:#F7FBFE;margin:18px 0}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 22px}
+.path-grid-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.path-card{border:1px solid #D5E6F1;border-radius:10px;padding:16px;background:white;min-width:0}
+.path-card h3{font-size:16px;line-height:1.35;margin:0 0 10px}
+.path-card p{font-size:14px;line-height:1.55;margin:0}
+.guide-page .guide-checklist{padding-left:1.6em}
+.guide-page .guide-checklist li{margin:0 0 14px;padding-left:4px;line-height:1.6}
+.guide-details{border:1px solid #D5E6F1;border-radius:10px;padding:14px 16px;margin:20px 0;background:#FAFDFF}
+.guide-details summary{font-weight:700;cursor:pointer;line-height:1.5}
+.guide-details p{font-size:14px;line-height:1.6;margin:12px 0 0}
+.guide-template{background:#F2F8FC;border:1px solid #D5E6F1;border-radius:10px;padding:20px;margin:16px 0 24px}
+.guide-template p{margin:0}
+.guide-template ol{margin:0}
+.guide-template li{margin-bottom:9px}
+.guide-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.guide-compare>div{padding:16px;border:1px solid #D5E6F1;border-radius:10px;background:white}
+.guide-compare span{font-size:12px;line-height:1.5;font-weight:700;color:#516774}
+.guide-compare p{margin:8px 0 0;font-size:15px;line-height:1.6}
+.home-page .resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.home-page .resource-card{display:flex;flex-direction:column;gap:12px;padding:20px;border:1px solid #D5E6F1;border-radius:12px;background:#fff;color:#162F3F;text-decoration:none;min-width:0}
+.home-page .resource-card:hover,.home-page .resource-card:focus-visible{border-color:#7BB0D2;background:#F5FAFE}
+.home-page .resource-label{font-size:12px;line-height:1.5;color:#567083}
+.home-page .resource-card strong{font-size:18px;line-height:1.4;font-weight:600}
+.home-page .resource-card span:not(.resource-label):not(.resource-link){font-size:14px;line-height:1.55;color:#334754}
+.home-page .resource-link{font-size:14px;line-height:1.5;font-weight:700;margin-top:auto}
+@media(max-width:700px){.path-grid,.path-grid-two,.guide-compare,.home-page .resource-grid{grid-template-columns:1fr}}
