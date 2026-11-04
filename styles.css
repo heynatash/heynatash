@@ -284,3 +284,7 @@ body.has-site-nav{grid-template-rows:auto 1fr auto}
 .home-page .resource-card span:not(.resource-label):not(.resource-link){font-size:14px;line-height:1.55;color:#334754}
 .home-page .resource-link{font-size:14px;line-height:1.5;font-weight:700;margin-top:auto}
 @media(max-width:700px){.path-grid,.path-grid-two,.guide-compare,.home-page .resource-grid{grid-template-columns:1fr}}
+
+/* Preserve the author's distinctive viewpoint without overwhelming the guide */
+.guide-author-note{margin:18px 0 24px;padding:14px 18px;border-left:3px solid #A6C9E0;background:#F7FBFE;border-radius:0 8px 8px 0}
+.guide-author-note p{margin:0;font-size:15px;line-height:1.65}
