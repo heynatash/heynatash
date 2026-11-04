@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Наталья Серикова — медицинский советник в биомедтехе</title>
-<meta name="description" content="Наталья Серикова — врач-анестезиолог-реаниматолог, медицинский советник в биомедтех-командах на ранних стадиях разработки продукта. Основатель Docs2Tech.">
+<meta name="description" content="Наталья Серикова — врач-анестезиолог-реаниматолог и медицинский советник. Экспертиза MedTech-продуктов, реальные кейсы и консультации для врачей.">
 <link rel="canonical" href="https://heynatash.ru/">
 <script>
 (function () {
@@ -80,41 +80,96 @@
 </header>
 
 <main class="site-main site-grid">
-  <header class="hero">
-    <h1>Наталья Серикова</h1>
+  <header class="hero" aria-labelledby="home-heading">
+    <p class="hero-overline">Врач-анестезиолог-реаниматолог · Медицинский советник</p>
+    <h1 id="home-heading">Наталья Серикова</h1>
     <p class="hero-role">MD, Medical Advisor</p>
-    <nav class="social-links" id="contacts" aria-label="Профессиональные профили">
+    <p class="hero-lead">Помогаю командам медицинских технологий оценивать клиническую применимость продукта, а врачам — находить конкретные задачи для своей экспертизы в технологических проектах.</p>
+    <div class="hero-actions" aria-label="Выбрать направление">
+      <a class="home-action home-action-primary" href="#startups-content">Я разрабатываю медицинский продукт</a>
+      <a class="home-action" href="#colleagues-content">Я врач</a>
+    </div>
+    <nav class="social-links" id="contacts" aria-label="Связаться со мной">
       <a href="https://www.linkedin.com/in/nserikova/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Натальи Сериковой">LinkedIn <span aria-hidden="true">↗</span></a>
       <a id="contact-email" aria-label="Написать Наталье Сериковой по электронной почте">Почта <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
-  <section class="home-info-layout" aria-label="Обо мне и разделы для посетителей">
-    <div class="home-info-content">
-      <section class="home-info-panel" id="about-content" aria-labelledby="about-heading">
-        <h2 id="about-heading">Обо мне за последние 7 лет:</h2>
-        <div class="about-facts">
-          <p>Врач-анестезиолог-реаниматолог</p>
-          <p>Основатель пространства для врачей и технических команд — <strong><a href="https://docs2tech.ru/">docs2tech.ru</a></strong></p>
-          <p>Медицинский советник в биомедтех-командах на ранних стадиях разработки продукта</p>
-        </div>
-      </section>
-      <section class="home-info-panel" id="colleagues-content" aria-labelledby="colleagues-heading">
-        <h2 id="colleagues-heading">Коллегам</h2>
-        <div class="audience-copy">
-          <p>Я ушла из клинической медицины после 7 лет работы врачом, и мне есть что сказать</p>
-          <p>Помогу пересобрать резюме под выбранную роль</p>
-          <p>Помогу определиться с направлением вне медицины</p>
-          <p><a href="/doctor-to-startup/">Хочешь уйти в медтех-стартап?</a></p>
-        </div>
-      </section>
-      <section class="home-info-panel" id="startups-content" aria-labelledby="startups-heading">
-        <h2 id="startups-heading">Стартапам</h2>
-        <div class="audience-copy">
-          <p><a href="/medtech-startup/">Как сделать медтех стартап?</a></p>
-        </div>
-      </section>
-    </div>
-  </section>
+  <div class="home-info-layout">
+    <section class="home-info-panel home-proof" id="about-content" aria-labelledby="about-heading">
+      <p class="section-eyebrow">Опыт и результаты</p>
+      <h2 id="about-heading">Клиническая практика и работа с продуктами</h2>
+      <p class="section-intro">Работаю в медицине с 2021 года. Практика в анестезиологии-реаниматологии, организация работы реанимационного отделения и медицинская экспертиза технологических проектов ранних стадий.</p>
+      <div class="proof-grid" aria-label="Результаты работы по состоянию на октябрь 2026 года">
+        <div class="proof-item"><strong>16</strong><span>экспертных консультаций командам</span></div>
+        <div class="proof-item"><strong>18</strong><span>интервью с практикующими врачами</span></div>
+        <div class="proof-item"><strong>4</strong><span>проекта с моим участием дошли до MVP</span></div>
+        <div class="proof-item"><strong>Топ-30</strong><span>Проектного марафона ДЗМ, 2025</span></div>
+      </div>
+      <p class="proof-note">MVP — минимально жизнеспособный продукт. ДЗМ — Департамент здравоохранения Москвы. Количественные показатели отражают мой профессиональный опыт, а не результаты независимого аудита.</p>
+    </section>
+
+    <section class="home-info-panel" id="startups-content" aria-labelledby="startups-heading">
+      <p class="section-eyebrow">Для основателей и продуктовых команд</p>
+      <h2 id="startups-heading">Медицинская экспертиза для MedTech-стартапа</h2>
+      <p class="section-intro">На ранней стадии важно проверить не только технологию, но и то, кому, в каком клиническом сценарии и зачем она нужна.</p>
+      <div class="service-block">
+        <h3>Разбор клинической гипотезы продукта</h3>
+        <p><strong>С чем приходят:</strong> идея или прототип, предполагаемая аудитория, сценарий использования, имеющиеся исследования и вопросы команды.</p>
+        <p><strong>Что проверяем:</strong> клиническую задачу, маршрут пользователя, применимость решения, ограничения и пробелы в доказательствах.</p>
+        <p><strong>На выходе:</strong> структурированная обратная связь, перечень критических вопросов и приоритеты следующей проверки гипотезы. Формат и объём работы согласовываем под задачу.</p>
+        <a class="home-action home-action-primary contact-direct" href="#contacts" data-subject="Медицинская экспертиза продукта">Обсудить продукт ↗</a>
+      </div>
+    </section>
+
+    <section class="home-info-panel" id="colleagues-content" aria-labelledby="colleagues-heading">
+      <p class="section-eyebrow">Для врачей</p>
+      <h2 id="colleagues-heading">Как использовать врачебный опыт в медицинских технологиях</h2>
+      <p class="section-intro">Разберём не абстрактные «переносимые навыки», а конкретные задачи технологических команд, для которых подходит твой клинический опыт.</p>
+      <div class="service-block">
+        <h3>Индивидуальный разбор профессионального направления</h3>
+        <p><strong>До консультации:</strong> специальность, опыт, резюме при наличии и интересующие направления.</p>
+        <p><strong>На выходе:</strong> варианты практических задач, границы текущих компетенций, направления для развития и следующие шаги к первому контакту с командой.</p>
+        <p>Это консультация по применению медицинской экспертизы, а не услуга трудоустройства.</p>
+        <a class="home-action home-action-primary contact-direct" href="#contacts" data-subject="Консультация для врача">Обсудить мой запрос ↗</a>
+        <p class="service-related">Начать самостоятельно: <a href="/doctor-to-startup/">«Хочешь уйти в медтех-стартап?»</a></p>
+      </div>
+    </section>
+
+    <section class="home-info-panel" id="cases" aria-labelledby="cases-heading">
+      <p class="section-eyebrow">Выбранные проекты</p>
+      <h2 id="cases-heading">Что именно я делала</h2>
+      <div class="case-grid">
+        <article class="case-card">
+          <p class="case-type">Клиническая поддержка решений · 2025</p>
+          <h3>Антибиотикотерапия в стационаре</h3>
+          <p><strong>Задача:</strong> сформулировать концепцию системы поддержки назначения антибактериальной терапии.</p>
+          <p><strong>Моя работа:</strong> клиническая логика и сценарии; проверка запроса у 20 врачей-анестезиологов-реаниматологов.</p>
+          <p><strong>Результат:</strong> проектная концепция вошла в топ-30 Проектного марафона ДЗМ. Это не внедрённая клиническая система.</p>
+        </article>
+        <article class="case-card">
+          <p class="case-type">Медицинский искусственный интеллект · 2026</p>
+          <h3>Компьютерное зрение в стоматологии</h3>
+          <p><strong>Задача:</strong> оценить клиническую применимость предполагаемого продукта.</p>
+          <p><strong>Моя работа:</strong> медицинский аудит гипотезы и сценариев использования.</p>
+          <p><strong>Результат:</strong> выявлены ограничения продуктовой ценности; подтверждений соответствия продукта рынку оказалось недостаточно.</p>
+        </article>
+        <article class="case-card">
+          <p class="case-type">Биотехнологии и диагностика · 2026</p>
+          <h3>Плазменные биомаркеры болезни Альцгеймера</h3>
+          <p><strong>Задача:</strong> оформить медицинскую ценность диагностической концепции для ранней стадии проекта.</p>
+          <p><strong>Моя работа:</strong> продуктовая концепция, сценарии применения, дорожная карта и медицинская часть презентации.</p>
+          <p><strong>Результат:</strong> сформированы проектные материалы; клиническая эффективность теста этим не подтверждена.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-info-panel contact-bottom" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Есть конкретная задача?</h2>
+      <p>Напиши, что разрабатываешь или какой профессиональный вопрос хочешь разобрать. В ответ определим, подходит ли мой опыт под запрос и какой формат работы имеет смысл.</p>
+      <a class="home-action home-action-primary contact-direct" href="#contacts" data-subject="Запрос с сайта HeyNatash">Написать ↗</a>
+      <p class="service-related">Также я развиваю <a href="https://docs2tech.ru/" target="_blank" rel="noopener noreferrer">Docs2Tech</a> — пространство для взаимодействия врачей и технологических команд.</p>
+    </section>
+  </div>
 </main>
 <footer class="site-footer site-grid">
   <div class="footer-text">Наталья Серикова, врач-анестезиолог-реаниматолог, медицинский советник</div>
@@ -132,6 +187,10 @@
   if (link) {
     link.href = 'mai' + 'lto:' + email;
   }
+  document.querySelectorAll('.contact-direct').forEach(function (cta) {
+    var subject = cta.getAttribute('data-subject') || 'Запрос с сайта';
+    cta.href = 'mai' + 'lto:' + email + '?subject=' + encodeURIComponent(subject);
+  });
 })();
 </script>
 
