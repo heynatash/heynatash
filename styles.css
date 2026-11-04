@@ -241,3 +241,11 @@ body.has-site-nav{grid-template-rows:auto 1fr auto}
 
 /* Spacing between the two offer formats in each audience section */
 .home-page .service-block+.service-block{margin-top:14px}
+
+/* Recognition displayed separately from delivery metrics */
+.home-page .proof-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.home-page .recognition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 12px}
+.home-page .recognition-item{display:flex;flex-direction:column;gap:5px;padding:16px;border:1px solid #D5E6F1;border-radius:10px;background:rgba(255,255,255,.93)}
+.home-page .recognition-item strong{font-size:17px;line-height:1.4;font-weight:600}
+.home-page .recognition-item span{font-size:13px;line-height:1.5;color:#334754}
+@media(max-width:650px){.home-page .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .recognition-grid{grid-template-columns:1fr}}
