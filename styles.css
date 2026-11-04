@@ -187,3 +187,54 @@ body.has-site-nav{grid-template-rows:auto 1fr auto}
   html{scroll-behavior:auto}
   .site-nav,.site-nav-links a,.site-nav-contact{transition:none}
 }
+
+
+/* HeyNatash: service-led homepage and evidence-based case presentation, 2026-11-04 */
+.home-page .hero-overline{font-size:13px;line-height:1.5;letter-spacing:.03em;margin:0 0 14px;color:#516774}
+.home-page .hero-lead{font-size:clamp(18px,2.2vw,22px);line-height:1.5;max-width:700px;margin:0 0 24px;font-weight:400}
+.home-page .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.home-page .home-action{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:11px 16px;border:1px solid #A6C9E0;border-radius:8px;text-decoration:none!important;font-size:14px;line-height:1.35;font-weight:600;color:#142A38;background:#fff;max-width:100%;text-align:center}
+.home-page .home-action-primary{background:#EAF4FA}
+.home-page .home-action:hover,.home-page .home-action:focus-visible{border-color:#356e91;background:#DCEEF9}
+.home-page .home-info-panel{scroll-margin-top:108px}
+.home-page .home-info-panel h2{font-size:clamp(21px,2.5vw,27px);letter-spacing:-.02em}
+.home-page .section-eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#4E697B;margin:0 0 10px!important;font-weight:700}
+.home-page .section-intro{font-size:16px;line-height:1.65;max-width:690px;margin:0 0 18px}
+.home-page .proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0 12px}
+.home-page .proof-item{display:flex;flex-direction:column;gap:10px;min-width:0;padding:17px 13px;border:1px solid #D5E6F1;border-radius:10px;background:rgba(255,255,255,.93)}
+.home-page .proof-item strong{font-size:clamp(24px,2.8vw,31px);line-height:1.15;font-weight:600;letter-spacing:-.02em}
+.home-page .proof-item span{font-size:12px;line-height:1.5;color:#334754}
+.home-page .proof-note{font-size:12px;line-height:1.6;color:#51616A;margin:0}
+.home-page .service-block{border:1px solid #D5E6F1;border-radius:12px;background:rgba(255,255,255,.95);padding:clamp(18px,3vw,26px)}
+.home-page .service-block h3{font-size:18px;line-height:1.4;margin:0 0 16px;font-weight:600}
+.home-page .service-block p{margin:0 0 13px}
+.home-page .service-block .home-action{margin:8px 0 0}
+.home-page .service-block .service-related,.home-page .service-related{margin:16px 0 0;font-size:13px;line-height:1.55;color:#415667}
+.home-page .case-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.home-page .case-card{padding:clamp(18px,2.4vw,26px);border:1px solid #D5E6F1;border-radius:12px;background:rgba(255,255,255,.95)}
+.home-page .case-type{font-size:12px!important;color:#516774;margin:0 0 9px!important}
+.home-page .case-card h3{font-size:18px;line-height:1.4;margin:0 0 14px}
+.home-page .case-card p{font-size:15px;line-height:1.6;margin:0 0 10px}
+.home-page .case-card p:last-child{margin-bottom:0}
+.home-page .contact-bottom{padding:24px;border:1px solid #D5E6F1;border-radius:12px;background:#F7FBFE}
+.home-page .contact-bottom p{margin:0 0 18px}
+.home-page .contact-bottom .service-related{margin:16px 0 0}
+@media(max-width:650px){.home-page .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .hero-actions{align-items:stretch}.home-page .hero-actions .home-action{width:100%}}
+@media(max-width:380px){.home-page .proof-item{padding:13px 10px}.home-page .proof-item strong{font-size:24px}}
+
+/* Editorial readability: summary, scannable TOC, examples and consultation CTA */
+.article-summary{background:#F2F9FE;border-left:3px solid #A6C9E0;border-radius:0 10px 10px 0;padding:16px 20px;margin:0 0 24px}
+.article-summary h2{font-size:18px;margin:0 0 8px;line-height:1.4}
+.article-summary p{margin:0;font-size:15px;line-height:1.6}
+.article-toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 16px;padding:16px 0 24px;border-bottom:1px solid #D5E6F1;margin:0 0 28px}
+.article-toc strong{grid-column:1/-1;font-size:14px;margin-bottom:6px}
+.article-toc a{font-size:14px;line-height:1.45}
+.article-tasks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 24px}
+.article-tasks>div{border:1px solid #D5E6F1;border-radius:10px;background:#fff;padding:16px}
+.article-tasks h3{font-size:16px;margin:0 0 10px}
+.article-tasks p{font-size:14px;line-height:1.6;margin:0}
+.article-service{padding:20px;background:#F2F9FE;border:1px solid #D5E6F1;border-radius:12px;margin:32px 0 14px}
+.article-service h2{font-size:20px;margin:0 0 12px}
+.article-service p{font-size:15px;line-height:1.6;margin:0 0 14px}
+.article-service a{font-weight:700}
+@media(max-width:650px){.article-tasks{grid-template-columns:1fr}.article-toc{grid-template-columns:1fr}.article-summary{padding:14px 16px}}
