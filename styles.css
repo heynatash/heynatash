@@ -238,3 +238,6 @@ body.has-site-nav{grid-template-rows:auto 1fr auto}
 .article-service p{font-size:15px;line-height:1.6;margin:0 0 14px}
 .article-service a{font-weight:700}
 @media(max-width:650px){.article-tasks{grid-template-columns:1fr}.article-toc{grid-template-columns:1fr}.article-summary{padding:14px 16px}}
+
+/* Spacing between the two offer formats in each audience section */
+.home-page .service-block+.service-block{margin-top:14px}
