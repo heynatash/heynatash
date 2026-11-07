@@ -1,0 +1,10 @@
+title: "Hey, Наташ"
+url: "https://heynatash.ru"
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
