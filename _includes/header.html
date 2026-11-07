@@ -1,0 +1,12 @@
+<header class="site-nav" id="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-brand" href="/" aria-label="Раздаю советы — на главную"><strong>{{ site.data.site.brand.name | escape }}</strong><span>{{ site.data.site.brand.tagline | escape }}</span></a>
+    <nav class="site-nav-links" id="site-nav-links" aria-label="Основная навигация">
+      {% for link in site.data.site.nav %}<a href="{{ link.url }}">{{ link.label | escape }}</a>{% endfor %}
+    </nav>
+    <div class="site-nav-cta">
+      <a class="site-nav-contact" href="/#contacts">{{ site.data.site.contact_label | escape }}</a>
+      <button class="site-nav-burger" type="button" aria-label="Открыть меню" aria-controls="site-nav-links" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
