@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<main class="site-main site-grid">
+  <header class="hero">
+    <h1>{{ site.data.site.author.name | escape }}</h1>
+    <p class="hero-role">{{ site.data.home.role | escape }}</p>
+    <nav class="social-links" id="contacts" aria-label="Профессиональные профили">
+      {% for link in site.data.home.social %}
+      <a href="{{ link.url }}" target="_blank" rel="me noopener noreferrer" aria-label="{{ link.aria | escape }}">{{ link.label | escape }} <span aria-hidden="true">↗</span></a>
+      {% endfor %}
+      <a id="contact-email" aria-label="{{ site.data.home.email.aria | escape }}">{{ site.data.home.email.label | escape }} <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <section class="home-info-layout" aria-label="Обо мне и разделы для посетителей">
+    <div class="home-info-content">
+      <section class="home-info-panel" id="about-content" aria-labelledby="about-heading">
+        <h2 id="about-heading">{{ site.data.home.about.title | escape }}</h2>
+        <div class="about-facts">
+          {% for item in site.data.home.about.paragraphs %}
+          <p>{{ item.text | escape }}{% if item.link %}{% if item.link.strong %}<strong>{% endif %}<a href="{{ item.link.url }}">{{ item.link.text | escape }}</a>{% if item.link.strong %}</strong>{% endif %}{% endif %}</p>
+          {% endfor %}
+        </div>
+      </section>
+      <section class="home-info-panel" id="colleagues-content" aria-labelledby="colleagues-heading">
+        <h2 id="colleagues-heading">{{ site.data.home.colleagues.title | escape }}</h2>
+        <div class="audience-copy">
+          {% for item in site.data.home.colleagues.paragraphs %}
+          <p>{{ item.text | escape }}{% if item.link %}<a href="{{ item.link.url }}">{{ item.link.text | escape }}</a>{% endif %}</p>
+          {% endfor %}
+        </div>
+      </section>
+      <section class="home-info-panel" id="startups-content" aria-labelledby="startups-heading">
+        <h2 id="startups-heading">{{ site.data.home.startups.title | escape }}</h2>
+        <div class="audience-copy">
+          {% for item in site.data.home.startups.paragraphs %}
+          <p>{% if item.link %}<a href="{{ item.link.url }}">{{ item.link.text | escape }}</a>{% else %}{{ item.text | escape }}{% endif %}</p>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+<script>
+(function () {
+  // Лёгкая маскировка от ботов, считывающих только исходный HTML.
+  var data = '5b283e293230342d3a353a2f3a37223a1b363a323775292e';
+  var key = parseInt(data.slice(0, 2), 16);
+  var email = '';
+  for (var i = 2; i < data.length; i += 2) {
+    email += String.fromCharCode(parseInt(data.slice(i, i + 2), 16) ^ key);
+  }
+  var link = document.getElementById('contact-email');
+  if (link) {
+    link.href = 'mai' + 'lto:' + email;
+  }
+})();
+</script>

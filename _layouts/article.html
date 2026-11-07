@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<main class="site-main site-grid">
+  <article class="article-page" aria-labelledby="article-title">
+    <nav class="article-nav" aria-label="Навигация по сайту"><a href="/">← На главную</a></nav>
+    <h1 id="article-title">{{ page.title | escape }}</h1>
+    <p class="article-byline">Автор: <a href="/" rel="author">{{ site.data.site.author.name | escape }}</a> · <time datetime="{{ page.date_published }}">{{ page.date_display | escape }}</time></p>
+    {{ content }}
+    <nav class="article-bottom-nav" aria-label="Возврат на главную"><a href="/">← На главную</a></nav>
+  </article>
+</main>

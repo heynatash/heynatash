@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>{{ page.browser_title | default: page.title | escape }}</title>
+{% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+{% if page.robots %}<meta name="robots" content="{{ page.robots | escape }}">{% endif %}
+<link rel="canonical" href="{{ site.url }}{{ page.canonical_path }}">
+{% if page.kind == 'article' %}
+<meta name="author" content="{{ site.data.site.author.name | escape }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="{{ site.data.site.site_name | escape }}">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ page.description | escape }}">
+<meta property="og:url" content="{{ site.url }}{{ page.canonical_path }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.title | escape }}">
+<meta name="twitter:description" content="{{ page.description | escape }}">
+{% endif %}
+{% if page.kind == 'home' or page.kind == 'article' %}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Person",
+      "@id":"{{ site.url }}/#person",
+      "name":{{ site.data.site.author.name | jsonify }},
+      "jobTitle":{{ site.data.site.author.job_title | jsonify }},
+      "url":"{{ site.url }}/",
+      "sameAs":[{{ site.data.site.author.linked_in | jsonify }}]
+      {% if page.kind == 'home' %},
+      "description":{{ page.description | jsonify }}{% endif %}
+    },
+    {% if page.kind == 'home' %}
+    {
+      "@type":"WebSite",
+      "@id":"{{ site.url }}/#website",
+      "name":{{ site.data.site.site_name | jsonify }},
+      "url":"{{ site.url }}/",
+      "inLanguage":"ru-RU",
+      "publisher":{"@id":"{{ site.url }}/#person"}
+    }
+    {% else %}
+    {
+      "@type":"BlogPosting",
+      "@id":"{{ site.url }}{{ page.canonical_path }}#article",
+      "headline":{{ page.title | jsonify }},
+      "description":{{ page.description | jsonify }},
+      "inLanguage":"ru-RU",
+      "mainEntityOfPage":{"@type":"WebPage","@id":"{{ site.url }}{{ page.canonical_path }}"},
+      "url":"{{ site.url }}{{ page.canonical_path }}",
+      "isPartOf":{"@id":"{{ site.url }}/#website"},
+      "author":{"@id":"{{ site.url }}/#person","@type":"Person","name":{{ site.data.site.author.name | jsonify }},"url":"{{ site.url }}/"},
+      "publisher":{"@id":"{{ site.url }}/#person"},
+      "datePublished":{{ page.date_published | jsonify }},
+      "dateModified":{{ page.date_modified | jsonify }},
+      "isAccessibleForFree":true,
+      "about":[{"@type":"Thing","name":"Медицинские технологии (MedTech)"},{"@type":"Thing","name":"Карьера врача в медицинских стартапах"}]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"{{ site.url }}{{ page.canonical_path }}#breadcrumbs",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Главная","item":"{{ site.url }}/"},
+        {"@type":"ListItem","position":2,"name":{{ page.title | jsonify }},"item":"{{ site.url }}{{ page.canonical_path }}"}
+      ]
+    }
+    {% endif %}
+  ]
+}
+</script>
+{% endif %}
+<script>
+(function () {
+  var host = location.hostname.toLowerCase();
+  var local = host === 'localhost' || host === '127.0.0.1' || host === '[::1]' || location.protocol === 'file:';
+  if (!local && location.origin !== '{{ site.url }}') {
+    location.replace('{{ site.url }}' + location.pathname + location.search + location.hash);
+  }
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v={{ page.css_version | default: '20261031-blue-nav' }}">
+{% if page.kind == 'home' %}
+<style id="homepage-critical-layout">
+/* Keep essential homepage geometry in HTML so stale external CSS cannot retain the old spacing. */
+.site-main { grid-column:1/-1; align-content:start; margin-top:0; border:0; background:transparent; padding-top:0; padding-bottom:0; }
+.hero { padding-top:clamp(12px,2vh,24px); }
+.about-panel { margin-top:24px; }
+</style>
+{% endif %}
+</head>
+<body class="{{ page.body_class | default: 'has-site-nav' }}">
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+<script src="/site-nav.js?v=20261031-blue-nav" defer></script>
+</body>
+</html>
