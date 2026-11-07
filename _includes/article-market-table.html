@@ -1,0 +1,8 @@
+<div class="article-table-scroll" role="region" aria-label="Направления медицинских стартапов и специалисты" tabindex="0">
+  <table>
+    <thead><tr>{% for label in site.data.article_market.headers %}<th scope="col">{{ label | escape }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for row in site.data.article_market.rows %}
+      <tr><td><strong>{{ row.category | escape }}</strong>{{ row.description | escape }}</td><td>{{ row.specialists | escape }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</div>
