@@ -1,0 +1,32 @@
+{
+  "brand": {
+    "name": "раздаю советы",
+    "tagline": "медицинские и карьерные"
+  },
+  "nav": [
+    {
+      "label": "Обо мне",
+      "url": "/#about-content"
+    },
+    {
+      "label": "Коллегам",
+      "url": "/#colleagues-content"
+    },
+    {
+      "label": "Стартапам",
+      "url": "/#startups-content"
+    },
+    {
+      "label": "Полезное",
+      "url": "/doctor-to-startup/"
+    }
+  ],
+  "contact_label": "Написать",
+  "site_name": "Hey, Наташ",
+  "author": {
+    "name": "Наталья Серикова",
+    "job_title": "Медицинский советник",
+    "linked_in": "https://www.linkedin.com/in/nserikova/"
+  },
+  "footer": "Наталья Серикова, врач-анестезиолог-реаниматолог, медицинский советник"
+}
