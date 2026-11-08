@@ -45,24 +45,24 @@
     ],
     "articles": [
       {
-        "title": "Хочу уйти из клиники. А куда?",
+        "title": "Хочу уйти из медицины",
         "url": "/career-outside-clinic/"
       },
       {
-        "title": "Кем врач может работать вне клиники?",
+        "title": "Радикальные меры",
         "url": "/doctor-nonclinical-roles/"
       },
       {
-        "title": "Как понять, подходит ли мне неклиническая вакансия?",
+        "title": "Частичный выход",
         "url": "/doctor-vacancy-fit/"
       },
       {
-        "title": "Где врачу искать неклиническую работу?",
-        "url": "/doctor-nonclinical-job-search/"
+        "title": "Врач в стартапе",
+        "url": "/doctor-to-startup/"
       },
       {
-        "title": "Хочешь уйти в медтех-стартап?",
-        "url": "/doctor-to-startup/"
+        "title": "Врач в фарме",
+        "url": "/doctor-in-pharma/"
       }
     ]
   },
