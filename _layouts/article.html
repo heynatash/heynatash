@@ -7,6 +7,7 @@ layout: default
     <h1 id="article-title">{{ page.title | escape }}</h1>
     <p class="article-byline">Автор: <a href="/" rel="author">{{ site.data.site.author.name | escape }}</a> · <time datetime="{{ page.date_published }}">{{ page.date_display | escape }}</time></p>
     {{ content }}
+    {% if page.career_series_nav %}{% include career-series-nav.html %}{% endif %}
     <nav class="article-bottom-nav" aria-label="Возврат на главную"><a href="/">← На главную</a></nav>
   </article>
 </main>
