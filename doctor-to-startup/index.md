@@ -3,16 +3,18 @@ layout: article
 kind: article
 permalink: /doctor-to-startup/
 canonical_path: /doctor-to-startup/
-title: "Хочешь уйти в медтех-стартап?"
-browser_title: "Хочешь уйти в медтех-стартап? Как врачу начать | Hey, Наташ"
+title: "Врач в стартапе"
+browser_title: "Врач в стартапе | Hey, Наташ"
 description: "Как врачу попасть в российский медтех-стартап: кому нужна клиническая экспертиза, где искать команды и как начать сотрудничество с технологическими проектами."
 date_published: "2026-10-31"
 date_modified: "2026-10-31"
 date_display: "31 октября 2026 года"
 career_series_nav: true
-previous_article_url: /doctor-nonclinical-job-search/
-previous_article_title: "Где врачу искать неклиническую работу?"
+previous_article_url: /doctor-vacancy-fit/
+previous_article_title: "Частичный выход"
 css_version: 20261108-career-series
+next_article_title: "Врач в фарме"
+next_article_url: /doctor-in-pharma/
 ---
 
 Технологическая индустрия всё активнее вовлекает врачей в разработку новых продуктов. Развиваются решения на основе искусственного интеллекта (ИИ), в том числе компьютерного зрения, технологии реабилитации, нейроинтерфейсы, молекулярная диагностика и цифровые медицинские сервисы.
