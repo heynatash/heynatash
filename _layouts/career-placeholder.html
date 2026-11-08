@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<main class="site-main site-grid">
+  <article class="article-page career-article-shell" aria-labelledby="article-title">
+    <nav class="article-nav" aria-label="Навигация по сайту"><a href="/#colleagues-content">← К разделу «Коллегам»</a></nav>
+    <h1 id="article-title">{{ page.title | escape }}</h1>
+    {{ content }}
+    {% include career-series-nav.html %}
+  </article>
+</main>

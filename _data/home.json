@@ -41,12 +41,28 @@
       },
       {
         "text": "Помогу определиться с направлением вне медицины"
+      }
+    ],
+    "articles": [
+      {
+        "title": "Хочу уйти из медицины",
+        "url": "/career-outside-clinic/"
       },
       {
-        "link": {
-          "text": "Хочешь уйти в медтех-стартап?",
-          "url": "/doctor-to-startup/"
-        }
+        "title": "Радикальные меры",
+        "url": "/doctor-nonclinical-roles/"
+      },
+      {
+        "title": "Частичный выход",
+        "url": "/doctor-vacancy-fit/"
+      },
+      {
+        "title": "Врач в стартапе",
+        "url": "/doctor-to-startup/"
+      },
+      {
+        "title": "Врач в фарме",
+        "url": "/doctor-in-pharma/"
       }
     ]
   },

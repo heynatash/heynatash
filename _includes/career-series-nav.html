@@ -1,0 +1,15 @@
+<nav class="career-series-step-nav" aria-label="Навигация по серии статей">
+  {% if page.previous_article_url and page.previous_article_title %}
+  <a class="career-series-step career-series-step-previous" href="{{ page.previous_article_url }}">
+    <span>Предыдущая статья</span>
+    <strong>{{ page.previous_article_title | escape }}</strong>
+  </a>
+  {% endif %}
+  {% if page.next_article_url and page.next_article_title %}
+  <a class="career-series-step career-series-step-next" href="{{ page.next_article_url }}">
+    <span>Следующая статья</span>
+    <strong>{{ page.next_article_title | escape }} →</strong>
+  </a>
+  {% endif %}
+  <a class="career-series-all" href="/#colleagues-content">Все статьи для коллег</a>
+</nav>

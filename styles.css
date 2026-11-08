@@ -187,3 +187,19 @@ body.has-site-nav{grid-template-rows:auto 1fr auto}
   html{scroll-behavior:auto}
   .site-nav,.site-nav-links a,.site-nav-contact{transition:none}
 }
+
+/* Article navigation skeleton: only titles, no unpublished body text */
+.home-page .career-series-index{margin-top:22px}
+.home-page .career-series-index h3{font-size:17px;line-height:1.4;margin:0 0 12px;font-weight:600}
+.home-page .career-series-index ol{margin:0;padding-left:1.5em}
+.home-page .career-series-index li{margin:0 0 11px;padding-left:4px;line-height:1.55}
+.home-page .career-series-index li:last-child{margin-bottom:0}
+.home-page .career-series-index a{font-weight:500;text-underline-offset:3px}
+.career-series-step-nav{margin:36px 0 8px;padding-top:20px;border-top:1px solid #D9E6ED;display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.career-series-step{display:flex;flex-direction:column;gap:5px;padding:16px 18px;border:1px solid #CFDFE9;border-radius:12px;text-decoration:none!important;background:#F6FAFD;line-height:1.45}
+.career-series-step:hover,.career-series-step:focus-visible{border-color:#7DA9C5;background:#EDF6FB}
+.career-series-step span{font-size:12px;color:#526B7C}
+.career-series-step strong{font-size:16px;font-weight:600;color:#172F3F}
+.career-series-all{margin-top:4px;font-size:14px}
+.career-article-shell{min-height:330px}
+.career-article-shell .career-series-step-nav{margin-top:68px}

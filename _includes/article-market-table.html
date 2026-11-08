@@ -2,7 +2,16 @@
   <table>
     <thead><tr>{% for label in site.data.article_market.headers %}<th scope="col">{{ label | escape }}</th>{% endfor %}</tr></thead>
     <tbody>{% for row in site.data.article_market.rows %}
+      {% assign render_row = true %}
+      {% if include.segment == 'pharma' and row.category != 'Фармацевтические разработки:' %}{% assign render_row = false %}{% endif %}
+      {% if include.segment == 'startups' %}
+        {% if row.category == 'Фармацевтические разработки:' or row.category == 'Образовательные технологии:' %}
+          {% assign render_row = false %}
+        {% endif %}
+      {% endif %}
+      {% if render_row %}
       <tr><td><strong>{{ row.category | escape }}</strong>{{ row.description | escape }}</td><td>{{ row.specialists | escape }}</td></tr>
+    {% endif %}
     {% endfor %}</tbody>
   </table>
 </div>
