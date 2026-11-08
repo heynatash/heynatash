@@ -29,6 +29,14 @@ layout: default
           <p>{{ item.text | escape }}{% if item.link %}<a href="{{ item.link.url }}">{{ item.link.text | escape }}</a>{% endif %}</p>
           {% endfor %}
         </div>
+        <nav class="career-series-index" aria-label="Статьи для коллег о неклинической карьере">
+          <h3>Неклиническая карьера врача</h3>
+          <ol>
+            {% for article in site.data.home.colleagues.articles %}
+            <li><a href="{{ article.url }}">{{ article.title | escape }}</a></li>
+            {% endfor %}
+          </ol>
+        </nav>
       </section>
       <section class="home-info-panel" id="startups-content" aria-labelledby="startups-heading">
         <h2 id="startups-heading">{{ site.data.home.startups.title | escape }}</h2>
