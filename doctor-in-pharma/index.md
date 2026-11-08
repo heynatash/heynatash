@@ -10,3 +10,5 @@ css_version: 20261108-career-series
 previous_article_url: /doctor-to-startup/
 previous_article_title: "Врач в стартапе"
 ---
+
+{% include article-market-table.html segment="pharma" %}
